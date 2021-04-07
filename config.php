@@ -5,20 +5,20 @@ use Illuminate\Support\Str;
 return [
     'baseUrl' => '',
     'production' => false,
-    'siteName' => 'Blog Starter Template',
+    'siteName' => null,
     'siteDescription' => 'Generate an elegant blog with Jigsaw',
-    'siteAuthor' => 'Author Name',
+    'siteAuthor' => 'Nathan Daly',
 
     // collections
     'collections' => [
         'posts' => [
-            'author' => 'Author Name', // Default author, if not provided in a post
+            'author' => 'Nathan Daly', // Default author, if not provided in a post
             'sort' => '-date',
             'path' => 'blog/{filename}',
         ],
         'categories' => [
             'path' => '/blog/categories/{filename}',
-            'posts' => function ($page, $allPosts) {
+            'posts' => static function ($page, $allPosts) {
                 return $allPosts->filter(function ($post) use ($page) {
                     return $post->categories ? in_array($page->getFilename(), $post->categories, true) : false;
                 });
@@ -27,10 +27,10 @@ return [
     ],
 
     // helpers
-    'getDate' => function ($page) {
+    'getDate' => static function ($page) {
         return Datetime::createFromFormat('U', $page->date);
     },
-    'getExcerpt' => function ($page, $length = 255) {
+    'getExcerpt' => static function ($page, $length = 255) {
         if ($page->excerpt) {
             return $page->excerpt;
         }
@@ -57,7 +57,7 @@ return [
             ? preg_replace('/\s+?(\S+)?$/', '', $truncated) . '...'
             : $cleaned;
     },
-    'isActive' => function ($page, $path) {
+    'isActive' => static function ($page, $path) {
         return Str::endsWith(trimPath($page->getPath()), trimPath($path));
     },
 ];
