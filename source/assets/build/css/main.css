@@ -990,8 +990,8 @@ pre code {
 
 #mc-embedded-subscribe {
   --bg-opacity: 1;
-  background-color: #4299e1;
-  background-color: rgba(66, 153, 225, var(--bg-opacity));
+  background-color: #9f7aea;
+  background-color: rgba(159, 122, 234, var(--bg-opacity));
   cursor: pointer;
   line-height: 1.6;
   padding-left: 1.5rem;
@@ -1008,8 +1008,8 @@ pre code {
 
 #mc-embedded-subscribe:hover {
   --bg-opacity: 1;
-  background-color: #3182ce;
-  background-color: rgba(49, 130, 206, var(--bg-opacity));
+  background-color: #805ad5;
+  background-color: rgba(128, 90, 213, var(--bg-opacity));
 }
 
 @media (min-width: 768px) {
