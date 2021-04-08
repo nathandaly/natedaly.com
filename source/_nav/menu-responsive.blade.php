@@ -2,6 +2,13 @@
     <ul class="my-0">
         <li class="pl-4">
             <a
+                    title="{{ $page->siteName }} About"
+                    href="/about"
+                    class="nav-menu__item hover:text-purple-500 {{ $page->isActive('/about') ? 'active text-blue' : '' }}"
+            >About</a>
+        </li>
+        <li class="pl-4">
+            <a
                 title="{{ $page->siteName }} Blog"
                 href="/blog"
                 class="nav-menu__item hover:text-purple-500 {{ $page->isActive('/blog') ? 'active text-blue' : '' }}"
@@ -9,10 +16,10 @@
         </li>
         <li class="pl-4">
             <a
-                title="{{ $page->siteName }} About"
-                href="/about"
-                class="nav-menu__item hover:text-purple-500 {{ $page->isActive('/about') ? 'active text-blue' : '' }}"
-            >About</a>
+                    title="{{ $page->siteName }} Snippets"
+                    href="/snippets"
+                    class="nav-menu__item hover:text-purple-500 {{ $page->isActive('/snippets') ? 'active text-blue' : '' }}"
+            >Snippets</a>
         </li>
         <li class="pl-4">
             <a

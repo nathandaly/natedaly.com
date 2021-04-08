@@ -9,6 +9,11 @@
         Blog
     </a>
 
+    <a title="{{ $page->siteName }} Snippets" href="/snippets"
+       class="ml-6 text-gray-700 hover:text-purple-600 {{ $page->isActive('/snippets') ? 'active text-purple-600' : '' }}">
+        Snippets
+    </a>
+
     <a title="{{ $page->siteName }} Contact" href="/contact"
         class="ml-6 text-gray-700 hover:text-purple-600 {{ $page->isActive('/contact') ? 'active text-purple-600' : '' }}">
         Contact
